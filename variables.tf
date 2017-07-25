@@ -16,11 +16,11 @@ variable "public_ip" {
   default = "false"
 }
 
-variable "sgs" {}
 
-#variable "sgs" {
-#  type = "list"
-#}
+
+variable "sgs" {
+  type = "list"
+}
 
 
 variable "user_data" {}
