@@ -16,7 +16,7 @@ Module Input Variables
 - `ssh_key`             - ssh key
 - `user_data`           - user data script
 - `sgs`                 - security group ids
-
+- `user_data`           - override userdata to local "../../../provisioning.sh"
 Usage
 -----
 
@@ -47,6 +47,7 @@ module "demo_ec2" {
   environment         = "${var.environment}"
   }
 ```
+
 
 
 Outputs
