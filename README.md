@@ -21,33 +21,21 @@ Usage
 -----
 
 ```hcl
-variable "name" {
-  default = "demo"
-}
-variable "environment" {
-  default = "demo"
-}
-variable "aws_region" {
-  default = "us-east-2"
-}
-provider "aws" {
-    region = "${var.aws_region}"
-}
-
 module "demo_ec2" {
   source      = "github.com/stack42/terraform_aws_ec2/"
-  subnet_id           = "<subnet_id>"
   number_of_instances = "1"
   instance_type       = "t2.micro"
   public_ip           = "true"
+  tier                = "Public"
   ssh_key             = "<a_valid_ssh_key>"
   user_data           = "provisioning.sh"
   sgs                 = ["<Security Groups>"]
   name                = "${var.name}"
   environment         = "${var.environment}"
+  vpc_id              = "vpc_id"
+  region              = "region"
   }
 ```
-
 
 
 Outputs
